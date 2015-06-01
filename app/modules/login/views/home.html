@@ -1,0 +1,204 @@
+<div data-ng-controller="ModalController">
+  <!-- Fixed header navigation bar started here -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Analytics Dashboard</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#abt">About</a></li>
+        <li><a data-ng-click="modalToggle()"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Login<span class="sr-only">(current)</span></a></li>
+      </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav> <!-- Fixed header navigation bar ends here -->
+
+  <!-- Banner section starts from here -->
+  <div class="adp-banner" role="banner">
+    <div id="carousel-example-generic" class="carousel slide ada-banner-carousel" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item ada-banner-padding active">
+          <img src="images/3506715.png" alt="...">
+          <div class="carousel-caption">
+
+          </div>
+        </div>
+        <div class="item ada-banner-padding">
+          <img src="images/laptop-analytics.png" alt="...">
+          <div class="carousel-caption">
+
+          </div>
+        </div>
+        <div class="item ada-banner-padding">
+          <img src="images/3506082.png" alt="...">
+          <div class="carousel-caption">
+
+          </div>
+        </div>        
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div> <!-- Banner section ends here -->
+
+  <!-- Grid section content starts here -->
+  <div class="adp-grid-content">
+    <div class="container">
+      <div class="row adp-row">
+        <h1 class="col-lg-9 adp-content">Analytics dashboard - know your website's metrics.</h1>
+      </div>
+      <div class="row adp-row">
+        <div class="col-md-4">
+          <img src="images/3506082.png" class="adp-image adp-img-height" alt="know metrics" title="know metrics">
+          <h3>Know Your Metrics</h3>
+          <p class="text-muted">Bootstrap ships with vanilla CSS,
+          but its source code utilizes the two most popular CSS preprocessors,
+          Less and Sass. Quickly get started with precompiled CSS or build on the source.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="images/3506030.png" class="adp-image adp-img-height" alt="connectivity" title="connectivity">
+          <h3>Connect With Customers</h3>
+          <p class="text-muted">Bootstrap ships with vanilla CSS,
+          but its source code utilizes the two most popular CSS preprocessors,
+          Less and Sass. Quickly get started with precompiled CSS or build on the source.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="images/3506039.png" class="adp-image adp-img-height" alt="visitors list" title="visitors list">
+          <div class="adp-h3">
+          <h3>View The Live Visitors</h3>
+          </div>
+          <p class="text-muted">Bootstrap ships with vanilla CSS,
+          but its source code utilizes the two most popular CSS preprocessors,
+          Less and Sass. Quickly get started with precompiled CSS or build on the source.</p>
+        </div>
+      </div>
+    </div> 
+  </div> <!-- Grid section ends here -->
+
+  <!-- About content section starts here -->
+  <div>  
+    <h4 class="adp-about adp-head" id="abt">Why Analytics Dashboard ? </h4>
+    <div class="row  abt-content">
+    <div class="container">
+      <div class="col-lg-5">
+        <img src="images/3506715.png" alt="analytics" class="adp-image" title="analytics">
+      </div>
+      <div class="col-lg-7 ada-about-remove-right">
+        <p class="about">Analytics dashboard application  mainly provides service to the registered users.  This application gives the website matrix- like report on- number of page views,  which page users are surfing most, number of users  accessing the same, from which browsers they are accessing and from which location they are accessing  the  website in a day, week, month. So by this application you will get to know your website statistics and we will display the data in the GRAPHS, whether users are accessing website or not.</p>
+      </div>
+      </div>
+    </div>
+  </div> <!-- About content section ends here -->
+
+  <!-- Footer section starts here -->
+  <div class="footer" role="contentinfo">
+    <div class="container">
+      <p class="adp-copyright">Copyright &copy; 2015 - 2016 analyticsdashboard.com. All rights reserved.</p>
+    </div>
+  </div> <!-- Footer section ends here -->
+
+  <div class="ada-modal">
+    <div class="modal" tabindex="-1" data-ng-if="isModalOpen">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="ada-account" id="ada-account" data-ng-if="isAccount">
+            <div class="modal-header">
+              <div id="content">
+                <ul id="tabs" class="nav nav-tabs">
+                  <li id="login-toggle" data-ng-class="{ active: isLoginActive() }"><a data-ng-click="openLoginModal()">login</a></li>
+                  <li id="signup-toggle" data-ng-class="{ active: isSignupActive() }"><a data-ng-click="openSignupModal()">SignUp</a></li>
+                </ul> 
+                <div class="ada-login" id="login" data-ng-if="isLoginOpen" data-ng-controller="LoginController">
+                  <form name="myForm" autocomplete="off" novalidate spellcheck="false">
+                    <div class="modal-body tab-pane active">
+
+                      <danger-alert data-class="alert-danger" data-ng-if="isAlertDanger"  data-message="Invalid username / password"></danger-alert>
+
+                      <input-directive data-model='user.email' data-label='E-mail' data-id='email' data-placeholder='Email' data-type='email'></input-directive>
+
+                      <input-directive data-model='user.password' data-label='Password' data-id='pawd' data-placeholder='Password' data-type='password'></input-directive>
+                      <p>Forgot your password?</p>
+                      <p>click <a id="password-reset" data-ng-click="openAccountRecovery()">here</a> to reset</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-primary" data-ng-click="login()"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> SignIn</button>
+                      <button class="btn btn-warning" data-ng-click="closeModal()">Cancel</button>
+                    </div>
+                  </form>              
+                </div>
+                <div class="ada-signup" id="signup" data-ng-if="isSignupOpen" data-ng-controller="RegiserController">
+                  <form name="myForm" autocomplete="off" novalidate spellcheck="false">
+                    <div class="modal-body tab-pane active">
+                      <danger-alert data-class="alert-danger" data-ng-if="isAlertDanger" data-message="User already exists"></danger-alert>
+                      <danger-alert data-class="alert-success" data-ng-if="isAlertSuccess" data-message="Registration completed sucessfully..!"></danger-alert>
+
+                      <input-directive data-model="user.username" data-label='Username' data-id='username' data-placeholder='Username' data-type='text'></input-directive>
+                      <input-directive data-model="user.email" data-label='E-mail' data-id='email' data-placeholder='Email' data-type='email'></input-directive>
+                      <input-directive data-model="user.password" data-label='Password' data-id='pawd' data-placeholder='Password' data-type='password'></input-directive>
+                      <input-directive data-model="user.web" data-label='WebsiteName' data-id='website' data-placeholder='Enter website url' data-type='url'></input-directive>
+                      <input-directive data-model="user.phone" data-label='Phonenumber' data-id='phn' data-placeholder='Mobile number' data-type='tel'></input-directive>                   
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-primary" data-ng-click="register()"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> SignUp</button>
+                      <button class="btn btn-warning" data-ng-click="closeModal()">Cancel</button>
+                    </div>                  
+                  </form>
+                </div>
+              </div>
+            </div>       
+          </div>
+
+          <div class="ada-account-recovery" id="accountrec" data-ng-if="isAccountRecovery" data-ng-controller="AccountRecoveryController">
+            <div class="modal-header">
+              <h3 class="modal-title">Account recovery</h3>
+            </div>
+
+            <form name="myForm" autocomplete="off" novalidate spellcheck="false">
+              <div class="modal-body">
+
+                <danger-alert data-class="alert-danger" data-ng-if="isAlertDanger" data-message="No user find"></danger-alert>
+                <danger-alert data-class="alert-success" data-ng-if="isAlertSuccess" data-message="Password updated sucessfully..!"></danger-alert>  
+
+                <input-directive data-model="user.email" data-label='Email' data-id='email' data-placeholder='Email' data-type='text'></input-directive>
+              
+                <input-directive data-model="user.oldPassword" data-label='Old password' data-id='pawd' data-placeholder='Old password' data-type='password'></input-directive>  
+
+                <input-directive data-model="user.newPassword" data-label="New password" data-id="Password" data-placeholder="New password" data-type="password"></input-directive>  
+                          
+                <input-directive data-model="user.confirmPassword" data-label="Confirm password" data-id="confirmPassword" data-placeholder="Confirm password" data-type="password"></input-directive>                                                     
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" data-ng-click="recovery()"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Submit</button>
+                <button class="btn btn-success" data-ng-click="openAccountModal()">Login Here</button>
+                <button class="btn btn-warning">Cancel</button>
+              </div>
+            </form>                     
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>  
